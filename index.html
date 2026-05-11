@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГАЧИЛЕНД — товары для взрослых. Качество. Приватность. Доставка</title>
+    <meta name="description" content="ГАЧИЛЕНД — интернет-магазин премиальных товаров для взрослых. Анонимная упаковка, быстрая доставка по всей стране.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="age-gate" id="ageGate">
+        <div class="age-gate__card">
+            <div class="age-gate__logo">♂ ГАЧИЛЕНД</div>
+            <h2>Только для взрослых</h2>
+            <p>Сайт содержит товары 18+. Подтвердите, что вам есть 18 лет.</p>
+            <div class="age-gate__buttons">
+                <button class="btn btn--primary" id="ageYes">Мне есть 18</button>
+                <a class="btn btn--ghost" href="https://www.google.com">Мне нет 18</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">
+                <span class="logo__mark">♂</span>
+                <span class="logo__text">ГАЧИЛЕНД</span>
+            </a>
+            <nav class="nav">
+                <a href="#catalog">Каталог</a>
+                <a href="#how">Как заказать</a>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <span class="cart-btn__count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <span class="hero__eyebrow">18+ · Премиум для взрослых</span>
+                <h1 class="hero__title">Удовольствие<br><em>без компромиссов</em></h1>
+                <p class="hero__lead">Отобранная коллекция игрушек для взрослых. Безопасные материалы, дискретная упаковка, доставка за 1–3 дня.</p>
+                <div class="hero__actions">
+                    <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+                    <a href="#how" class="btn btn--ghost">Как заказать</a>
+                </div>
+                <div class="hero__trust">
+                    <div><b>10k+</b><span>довольных клиентов</span></div>
+                    <div><b>4.9★</b><span>средний рейтинг</span></div>
+                    <div><b>100%</b><span>анонимность</span></div>
+                </div>
+            </div>
+            <div class="hero__visual" aria-hidden="true">
+                <div class="blob blob--1"></div>
+                <div class="blob blob--2"></div>
+                <div class="blob blob--3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container features__grid">
+            <div class="feature">
+                <div class="feature__icon">📦</div>
+                <h3>Дискретная упаковка</h3>
+                <p>Без логотипов и надписей. Никто не узнает, что внутри.</p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">🔒</div>
+                <h3>Анонимная оплата</h3>
+                <p>Карта, СБП, криптовалюта. Никаких лишних данных.</p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">🚚</div>
+                <h3>Быстрая доставка</h3>
+                <p>От 1 дня по городу, 2–3 дня по стране.</p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">✅</div>
+                <h3>Сертифицированно</h3>
+                <p>Только медицинский силикон и проверенные бренды.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="section-eyebrow">Каталог</span>
+                    <h2 class="section-title">Наши бестселлеры</h2>
+                </div>
+                <div class="filters" id="filters">
+                    <button class="filter-chip is-active" data-filter="all">Все</button>
+                    <button class="filter-chip" data-filter="classic">Классика</button>
+                    <button class="filter-chip" data-filter="premium">Премиум</button>
+                    <button class="filter-chip" data-filter="fantasy">Фэнтези</button>
+                    <button class="filter-chip" data-filter="limited">Лимитки</button>
+                </div>
+            </div>
+            <div class="products" id="products"></div>
+        </div>
+    </section>
+
+    <section class="how" id="how">
+        <div class="container">
+            <span class="section-eyebrow">Как заказать</span>
+            <h2 class="section-title">Три шага до удовольствия</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step__num">01</div>
+                    <h3>Выберите товар</h3>
+                    <p>Добавьте понравившиеся позиции в корзину. Фильтры помогут сузить выбор.</p>
+                </div>
+                <div class="step">
+                    <div class="step__num">02</div>
+                    <h3>Оформите заказ</h3>
+                    <p>Укажите адрес и удобный способ связи. Данные не передаются третьим лицам.</p>
+                </div>
+                <div class="step">
+                    <div class="step__num">03</div>
+                    <h3>Получите посылку</h3>
+                    <p>Курьер или ПВЗ — на выбор. Упаковка без опознавательных знаков.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container about__grid">
+            <div class="about__text">
+                <span class="section-eyebrow">О нас</span>
+                <h2 class="section-title">Мы верим, что тело — это праздник</h2>
+                <p>ГАЧИЛЕНД — команда, которая разрушает табу вокруг темы удовольствия. Мы тщательно отбираем ассортимент: только проверенные бренды, медицинские материалы и честные описания.</p>
+                <p>Никакой стыдной рекламы, никакого мелкого шрифта. Прозрачные условия и круглосуточная поддержка.</p>
+                <a href="#catalog" class="btn btn--primary">В каталог</a>
+            </div>
+            <div class="about__stats">
+                <div><b>2019</b><span>год основания</span></div>
+                <div><b>350+</b><span>позиций в каталоге</span></div>
+                <div><b>78</b><span>городов доставки</span></div>
+                <div><b>24/7</b><span>поддержка</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacts">
+        <div class="container footer__inner">
+            <div>
+                <div class="logo logo--light">
+                    <span class="logo__mark">♂</span>
+                    <span class="logo__text">ГАЧИЛЕНД</span>
+                </div>
+                <p class="footer__tagline">Удовольствие без компромиссов.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Контакты</h4>
+                <a href="mailto:hi@gachiland.shop">hi@gachiland.shop</a>
+                <a href="tel:+78001234567">8 800 123-45-67</a>
+                <a href="#">Telegram: @gachiland</a>
+            </div>
+            <div class="footer__col">
+                <h4>Магазин</h4>
+                <a href="#catalog">Каталог</a>
+                <a href="#how">Доставка</a>
+                <a href="#">Оплата</a>
+                <a href="#">Возврат</a>
+            </div>
+            <div class="footer__col">
+                <h4>Правовое</h4>
+                <a href="#">Оферта</a>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">18+ предупреждение</a>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <span>© 2026 ГАЧИЛЕНД. Все права защищены.</span>
+            <span>Только для лиц старше 18 лет.</span>
+        </div>
+    </footer>
+
+    <div class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer__backdrop" id="drawerBackdrop"></div>
+        <aside class="drawer__panel" role="dialog" aria-label="Корзина">
+            <div class="drawer__head">
+                <h3>Корзина</h3>
+                <button class="drawer__close" id="drawerClose" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="drawer__body" id="drawerBody">
+                <div class="drawer__empty" id="drawerEmpty">
+                    <div class="drawer__empty-emoji">🛒</div>
+                    <p>Корзина пуста</p>
+                    <button class="btn btn--ghost" id="drawerEmptyClose">К каталогу</button>
+                </div>
+                <ul class="cart-list" id="cartList"></ul>
+            </div>
+            <div class="drawer__foot" id="drawerFoot" hidden>
+                <div class="drawer__total">
+                    <span>Итого</span>
+                    <b id="cartTotal">0 ₽</b>
+                </div>
+                <button class="btn btn--primary btn--block" id="checkoutBtn">Оформить заказ</button>
+            </div>
+        </aside>
+    </div>
+
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal__backdrop" id="modalBackdrop"></div>
+        <div class="modal__panel" role="dialog" aria-label="Оформление заказа">
+            <button class="modal__close" id="modalClose" aria-label="Закрыть">✕</button>
+            <div id="checkoutView">
+                <h3>Оформление заказа</h3>
+                <p class="modal__lead">Все поля обязательны. Упаковка без опознавательных знаков.</p>
+                <form id="checkoutForm" class="form" novalidate>
+                    <label>Имя
+                        <input type="text" name="name" required minlength="2">
+                    </label>
+                    <label>Телефон
+                        <input type="tel" name="phone" required pattern="[0-9+\-\s()]{7,}">
+                    </label>
+                    <label>Адрес доставки
+                        <input type="text" name="address" required minlength="5">
+                    </label>
+                    <label>Способ оплаты
+                        <select name="payment" required>
+                            <option value="card">Карта</option>
+                            <option value="sbp">СБП</option>
+                            <option value="crypto">Криптовалюта</option>
+                            <option value="cash">Наличные курьеру</option>
+                        </select>
+                    </label>
+                    <label class="form__check">
+                        <input type="checkbox" required>
+                        <span>Мне есть 18 лет, согласен с офертой</span>
+                    </label>
+                    <div class="form__total">
+                        <span>К оплате</span>
+                        <b id="formTotal">0 ₽</b>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--block">Подтвердить заказ</button>
+                </form>
+            </div>
+            <div id="successView" hidden>
+                <div class="success">
+                    <div class="success__emoji">✅</div>
+                    <h3>Заказ принят</h3>
+                    <p>Номер заказа: <b id="orderId"></b></p>
+                    <p class="modal__lead">Мы свяжемся с вами в течение 15 минут для подтверждения.</p>
+                    <button class="btn btn--primary btn--block" id="successClose">Отлично</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
